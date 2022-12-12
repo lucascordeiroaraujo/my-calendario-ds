@@ -15,7 +15,7 @@ module.exports = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/my-calendario-design-system/'
+      config.base = '/my-calendario-ds/'
     }
 
     return config

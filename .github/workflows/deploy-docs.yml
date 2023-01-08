@@ -16,10 +16,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
 
       - run: yarn
 
       - run: yarn run build
+        env:
+          TURBO_TOKEN: ct4rzEBvMAOEd36lGFd0gR52
+          TURBO_TEAM: rocketseat
 
       - name: Deploy storybook
         working-directory: ./packages/docs

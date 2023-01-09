@@ -23,8 +23,8 @@ jobs:
 
       - run: yarn run build
         env:
-          TURBO_TOKEN: ct4rzEBvMAOEd36lGFd0gR52
-          TURBO_TEAM: rocketseat
+          TURBO_TOKEN: LUy0uzWl6rKLER0B034KSDhr
+          TURBO_TEAM: mycalendario
 
       - name: Deploy storybook
         working-directory: ./packages/docs

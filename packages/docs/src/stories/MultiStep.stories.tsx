@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box, MultiStep, MultiStepProps } from '@my-calendario/react'
+import { Box, MultiStep, MultiStepProps } from '@my-calendario/react';
 
 export default {
   title: 'Form/Multi Step',
   component: MultiStep,
   args: {
     size: 4,
-    currentStep: 1,
+    currentStep: 1
   },
   decorators: [
-    (Story) => {
+    Story => {
       return (
         <Box
           as="label"
@@ -18,17 +18,17 @@ export default {
         >
           {Story()}
         </Box>
-      )
-    },
-  ],
-} as Meta<MultiStepProps>
+      );
+    }
+  ]
+} as Meta<MultiStepProps>;
 
 export const Primary: StoryObj<MultiStepProps> = {
-  args: {},
-}
+  args: {}
+};
 
 export const Full: StoryObj<MultiStepProps> = {
   args: {
-    currentStep: 4,
-  },
-}
+    currentStep: 4
+  }
+};

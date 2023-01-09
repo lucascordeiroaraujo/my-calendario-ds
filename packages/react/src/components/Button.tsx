@@ -1,6 +1,6 @@
-import { ComponentProps, ElementType } from 'react'
+import { ComponentProps, ElementType } from 'react';
 
-import { styled } from '../styles'
+import { styled } from '../styles';
 
 export const Button = styled('button', {
   all: 'unset',
@@ -20,10 +20,13 @@ export const Button = styled('button', {
   transition: '0.5s',
   svg: {
     width: '$4',
-    height: '$4',
+    height: '$4'
   },
   '&:disabled': {
-    cursor: 'not-allowed',
+    cursor: 'not-allowed'
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 2px $colors$gray100'
   },
   variants: {
     variant: {
@@ -31,51 +34,51 @@ export const Button = styled('button', {
         color: '$white',
         background: '$rose500',
         '&:not(:disabled):hover': {
-          background: '$rose300',
+          background: '$rose300'
         },
         '&:disabled': {
-          backgroundColor: '$gray200',
-        },
+          backgroundColor: '$gray200'
+        }
       },
       secondary: {
         color: '$rose300',
         border: '2px solid $rose500',
         '&:not(:disabled):hover': {
           background: '$rose500',
-          color: '$white',
+          color: '$white'
         },
         '&:disabled': {
           color: '$gray200',
-          borderColor: '$gray200',
-        },
+          borderColor: '$gray200'
+        }
       },
       tertiary: {
         color: '$gray100',
         '&:not(:disabled):hover': {
-          color: '$white',
+          color: '$white'
         },
         '&:disabled': {
-          color: '$gray600',
-        },
-      },
+          color: '$gray600'
+        }
+      }
     },
     size: {
       sm: {
-        height: 38,
+        height: 38
       },
       md: {
-        height: 46,
-      },
-    },
+        height: 46
+      }
+    }
   },
   defaultVariants: {
     variant: 'primary',
-    size: 'md',
-  },
-})
+    size: 'md'
+  }
+});
 
 export interface ButtonProps extends ComponentProps<typeof Button> {
-  as?: ElementType
+  as?: ElementType;
 }
 
-Button.displayName = 'Button'
+Button.displayName = 'Button';

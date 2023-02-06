@@ -1,0 +1,2 @@
+import{M as r}from"./index.0ce12fbc.js";import"./index.f0fd27fa.js";import"./iframe.facfe84a.js";import"./jsx-runtime.b3d3c12b.js";import"./index.9953933b.js";const c={title:"Data display/Avatar",component:r,args:{src:"https://github.com/lucascordeiroaraujo.png",alt:"Lucas Cordeiro Araujo"},argTypes:{src:{control:{type:"text"}}}},e={},p={args:{src:void 0}},l=["Primary","WithFallback"];export{e as Primary,p as WithFallback,l as __namedExportsOrder,c as default};
+//# sourceMappingURL=Avatar.stories.08d3d342.js.map

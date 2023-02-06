@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Text, TextProps } from '@my-calendario/react';
+import { MyCalendarioText, MyCalendarioTextProps } from '@my-calendario/react'
 
 export default {
   title: 'Typography/Text',
-  component: Text,
+  component: MyCalendarioText,
   args: {
     size: 'md',
     children:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro reprehenderit est veniam? Rem recusandae sint perspiciatis debitis corrupti. Deserunt neque exercitationem illo voluptatum laudantium culpa suscipit accusantium blanditiis voluptas numquam.'
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro reprehenderit est veniam? Rem recusandae sint perspiciatis debitis corrupti. Deserunt neque exercitationem illo voluptatum laudantium culpa suscipit accusantium blanditiis voluptas numquam.',
   },
   argTypes: {
     size: {
@@ -25,20 +25,20 @@ export default {
         '6xl',
         '7xl',
         '8xl',
-        '9xl'
+        '9xl',
       ],
       control: {
-        type: 'inline-radio'
-      }
-    }
-  }
-} as Meta<TextProps>;
+        type: 'inline-radio',
+      },
+    },
+  },
+} as Meta<MyCalendarioTextProps>
 
-export const Primary: StoryObj<TextProps> = {};
+export const Primary: StoryObj<MyCalendarioTextProps> = {}
 
-export const CustomTag: StoryObj<TextProps> = {
+export const CustomTag: StoryObj<MyCalendarioTextProps> = {
   args: {
     children: 'Strong text',
-    as: 'strong'
-  }
-};
+    as: 'strong',
+  },
+}

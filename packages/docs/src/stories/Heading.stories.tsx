@@ -1,37 +1,40 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Heading, HeadingProps } from '@my-calendario/react';
+import {
+  MyCalendarioHeading,
+  MyCalendarioHeadingProps,
+} from '@my-calendario/react'
 
 export default {
   title: 'Typography/Heading',
-  component: Heading,
+  component: MyCalendarioHeading,
   args: {
     children: 'Custom title',
-    size: 'md'
+    size: 'md',
   },
   argTypes: {
     size: {
       options: ['sm', 'md', 'lg', '2xl', '4xl', '5xl', '6xl'],
       control: {
-        type: 'inline-radio'
-      }
-    }
-  }
-} as Meta<HeadingProps>;
+        type: 'inline-radio',
+      },
+    },
+  },
+} as Meta<MyCalendarioHeadingProps>
 
-export const Primary: StoryObj<HeadingProps> = {};
+export const Primary: StoryObj<MyCalendarioHeadingProps> = {}
 
-export const CustomTag: StoryObj<HeadingProps> = {
+export const CustomTag: StoryObj<MyCalendarioHeadingProps> = {
   args: {
     children: 'H1 Heading',
-    as: 'h1'
+    as: 'h1',
   },
   parameters: {
     docs: {
       description: {
         story:
-          'Por padrão o heading sempre será um `h2`, mas podemos alterar isso com a propriedade `as`.'
-      }
-    }
-  }
-};
+          'Por padrão o heading sempre será um `h2`, mas podemos alterar isso com a propriedade `as`.',
+      },
+    },
+  },
+}

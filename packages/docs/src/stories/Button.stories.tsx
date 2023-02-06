@@ -1,75 +1,69 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button, ButtonProps } from '@my-calendario/react';
+import {
+  MyCalendarioButton,
+  MyCalendarioButtonProps,
+} from '@my-calendario/react'
 
-import { ArrowRight } from 'phosphor-react';
+import { ArrowLeft, ArrowRight } from 'phosphor-react'
+
+enum Icons {
+  NoIcon = 'No Icon',
+  ArrowLeft = 'ArrowLeft',
+  ArrowRight = 'ArrowRight',
+}
 
 export default {
   title: 'Form/Button',
-  component: Button,
+  component: (args: any) => (
+    <div>
+      <MyCalendarioButton {...args}>
+        {args.icon === Icons.ArrowLeft && <ArrowLeft weight="bold" />}
+
+        {args.children}
+
+        {args.icon === Icons.ArrowRight && <ArrowRight weight="bold" />}
+      </MyCalendarioButton>
+    </div>
+  ),
   args: {
-    children: 'Send',
-    variant: 'primary',
+    children: 'MyCalendário Button',
+    theme: 'primary',
     size: 'md',
-    disabled: false
+    loading: false,
+    disabled: false,
   },
   argTypes: {
-    variant: {
-      options: ['primary', 'secondary', 'tertiary'],
+    theme: {
+      options: ['primary', 'secondary', 'tertiary', 'destructive', 'positive'],
       control: {
-        type: 'inline-radio'
-      }
+        type: 'inline-radio',
+      },
     },
     size: {
-      options: ['sm', 'md'],
+      options: ['sm', 'md', 'lg'],
       control: {
-        type: 'inline-radio'
-      }
+        type: 'inline-radio',
+      },
+    },
+    loading: {
+      control: {
+        type: 'boolean',
+      },
     },
     disabled: {
       control: {
-        type: 'boolean'
-      }
+        type: 'boolean',
+      },
     },
-    onClick: { action: 'clicked' }
-  }
-} as Meta<ButtonProps>;
+    onClick: { action: 'clicked' },
+    icon: {
+      options: [Icons.NoIcon, Icons.ArrowLeft, Icons.ArrowRight],
+      control: {
+        type: 'select',
+      },
+    },
+  },
+} as Meta<MyCalendarioButtonProps>
 
-export const Primary: StoryObj<ButtonProps> = {};
-
-export const Secondary: StoryObj<ButtonProps> = {
-  args: {
-    variant: 'secondary',
-    children: 'Create new'
-  }
-};
-
-export const Tertiary: StoryObj<ButtonProps> = {
-  args: {
-    variant: 'tertiary',
-    children: 'Cancel'
-  }
-};
-
-export const Small: StoryObj<ButtonProps> = {
-  args: {
-    size: 'sm'
-  }
-};
-
-export const WithIcon: StoryObj<ButtonProps> = {
-  args: {
-    children: (
-      <>
-        Próximo passo
-        <ArrowRight weight="bold" />
-      </>
-    )
-  }
-};
-
-export const Disabled: StoryObj<ButtonProps> = {
-  args: {
-    disabled: true
-  }
-};
+export const Button: StoryObj<MyCalendarioButtonProps> = {}

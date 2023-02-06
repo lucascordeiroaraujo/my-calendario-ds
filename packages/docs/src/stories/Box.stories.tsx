@@ -1,24 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Box, BoxProps } from '@my-calendario/react';
+import { MyCalendarioBox, MyCalendarioBoxProps } from '@my-calendario/react'
 
 export default {
   title: 'Surfaces/Box',
-  component: Box,
+  component: MyCalendarioBox,
   args: {
     children: (
       <>
         <span>Testando o elemento Box</span>
       </>
-    )
+    ),
   },
   argTypes: {
     children: {
       control: {
-        type: null
-      }
-    }
-  }
-} as Meta<BoxProps>;
+        type: null,
+      },
+    },
+  },
+} as Meta<MyCalendarioBoxProps>
 
-export const Primary: StoryObj<BoxProps> = {};
+export const Primary: StoryObj<MyCalendarioBoxProps> = {}

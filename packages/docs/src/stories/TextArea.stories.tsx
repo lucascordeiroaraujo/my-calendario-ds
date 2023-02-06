@@ -1,34 +1,39 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Box, Text, TextArea, TextAreaProps } from '@my-calendario/react';
+import {
+  MyCalendarioBox,
+  MyCalendarioText,
+  MyCalendarioTextArea,
+  MyCalendarioTextAreaProps,
+} from '@my-calendario/react'
 
 export default {
   title: 'Form/Text Area',
-  component: TextArea,
+  component: MyCalendarioTextArea,
   args: {},
   decorators: [
-    Story => {
+    (Story: any) => {
       return (
-        <Box
+        <MyCalendarioBox
           as="label"
           css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
         >
-          <Text size="sm">Observations</Text>
+          <MyCalendarioText size="sm">Observations</MyCalendarioText>
           {Story()}
-        </Box>
-      );
-    }
-  ]
-} as Meta<TextAreaProps>;
+        </MyCalendarioBox>
+      )
+    },
+  ],
+} as Meta<MyCalendarioTextAreaProps>
 
-export const Primary: StoryObj<TextAreaProps> = {
+export const Primary: StoryObj<MyCalendarioTextAreaProps> = {
   args: {
-    placeholder: 'Add any observations...'
-  }
-};
+    placeholder: 'Add any observations...',
+  },
+}
 
-export const Disabled: StoryObj<TextAreaProps> = {
+export const Disabled: StoryObj<MyCalendarioTextAreaProps> = {
   args: {
-    disabled: true
-  }
-};
+    disabled: true,
+  },
+}

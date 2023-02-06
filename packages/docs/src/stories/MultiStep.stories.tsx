@@ -1,34 +1,38 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Box, MultiStep, MultiStepProps } from '@my-calendario/react';
+import {
+  MyCalendarioBox,
+  MyCalendarioMultiStep,
+  MyCalendarioMultiStepProps,
+} from '@my-calendario/react'
 
 export default {
   title: 'Form/Multi Step',
-  component: MultiStep,
+  component: MyCalendarioMultiStep,
   args: {
     size: 4,
-    currentStep: 1
+    currentStep: 1,
   },
   decorators: [
-    Story => {
+    (Story: any) => {
       return (
-        <Box
+        <MyCalendarioBox
           as="label"
           css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
         >
           {Story()}
-        </Box>
-      );
-    }
-  ]
-} as Meta<MultiStepProps>;
+        </MyCalendarioBox>
+      )
+    },
+  ],
+} as Meta<MyCalendarioMultiStepProps>
 
-export const Primary: StoryObj<MultiStepProps> = {
-  args: {}
-};
+export const Primary: StoryObj<MyCalendarioMultiStepProps> = {
+  args: {},
+}
 
-export const Full: StoryObj<MultiStepProps> = {
+export const Full: StoryObj<MyCalendarioMultiStepProps> = {
   args: {
-    currentStep: 4
-  }
-};
+    currentStep: 4,
+  },
+}

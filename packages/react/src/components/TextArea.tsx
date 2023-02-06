@@ -1,8 +1,8 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from 'react'
 
-import { styled } from '../styles';
+import { styled } from '../styles'
 
-export const TextArea = styled('textarea', {
+export const MyCalendarioTextArea = styled('textarea', {
   backgroundColor: '$gray900',
   padding: '$3 $4',
   borderRadius: '$sm',
@@ -16,17 +16,18 @@ export const TextArea = styled('textarea', {
   minHeight: 80,
   '&:focus': {
     outline: 0,
-    borderColor: '$rose300'
+    borderColor: '$rose300',
   },
   '&:disabled': {
     opacity: 0.5,
-    cursor: 'not-allowed'
+    cursor: 'not-allowed',
   },
   '&:placeholder': {
-    color: '$gray400'
-  }
-});
+    color: '$gray400',
+  },
+})
 
-export interface TextAreaProps extends ComponentProps<typeof TextArea> {}
+export interface MyCalendarioTextAreaProps
+  extends ComponentProps<typeof MyCalendarioTextArea> {}
 
-TextArea.displayName = 'TextArea';
+MyCalendarioTextArea.displayName = 'MyCalendarioTextArea'

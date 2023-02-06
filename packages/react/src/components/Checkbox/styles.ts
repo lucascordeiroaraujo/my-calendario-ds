@@ -1,6 +1,6 @@
-import * as Checkbox from '@radix-ui/react-checkbox';
+import * as Checkbox from '@radix-ui/react-checkbox'
 
-import { styled, keyframes } from '../../styles';
+import { styled, keyframes } from '../../styles'
 
 export const CheckboxContainer = styled(Checkbox.Root, {
   all: 'unset',
@@ -17,39 +17,39 @@ export const CheckboxContainer = styled(Checkbox.Root, {
   alignItems: 'center',
   border: '2px solid $gray900',
   '&[data-state="checked"]': {
-    backgroundColor: '$rose300'
+    backgroundColor: '$rose300',
   },
   '&:focus, &[data-state="checked"]': {
-    border: '2px solid $rose300'
-  }
-});
+    border: '2px solid $rose300',
+  },
+})
 
 const slideIn = keyframes({
   from: {
-    transform: 'translateY(-100%)'
+    transform: 'translateY(-100%)',
   },
   to: {
-    transform: 'translateY(0)'
-  }
-});
+    transform: 'translateY(0)',
+  },
+})
 
 const slideOut = keyframes({
   from: {
-    transform: 'translateY(0)'
+    transform: 'translateY(0)',
   },
   to: {
-    transform: 'translateY(-100%)'
-  }
-});
+    transform: 'translateY(-100%)',
+  },
+})
 
 export const CheckboxIndicator = styled(Checkbox.Indicator, {
   color: '$white',
   width: '$4',
   height: '$4',
   '&[data-state="checked"]': {
-    animation: `${slideIn} 200ms ease-out`
+    animation: `${slideIn} 200ms ease-out`,
   },
   '&[data-state="unchecked"]': {
-    animation: `${slideOut} 200ms ease-out`
-  }
-});
+    animation: `${slideOut} 200ms ease-out`,
+  },
+})

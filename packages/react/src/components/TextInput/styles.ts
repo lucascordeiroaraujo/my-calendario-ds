@@ -1,57 +1,117 @@
-import { styled } from '../../styles';
+import { styled } from '../../styles'
 
 export const TextInputContainer = styled('div', {
-  backgroundColor: '$gray900',
-  padding: '$3 $4',
-  borderRadius: '$sm',
-  boxSizing: 'border-box',
-  border: '2px solid $gray900',
+  width: '100%',
   display: 'flex',
-  alignItems: 'center',
+  flexDirection: 'column',
+  gap: '$2',
+})
+
+export const TextInputLabel = styled('label', {
+  fontFamily: '$roboto',
   variants: {
     size: {
       sm: {
-        padding: '$2 $3'
+        fontSize: '$xs',
       },
       md: {
-        padding: '$3 $4'
-      }
-    }
+        fontSize: '$sm',
+      },
+    },
   },
-  '&:has(input:focus)': {
-    borderColor: '$rose300'
-  },
-  '&:has(input:disabled)': {
-    opacity: 0.5,
-    cursor: 'not-allowed'
-  },
-  defaultVariants: {
-    size: 'md'
-  }
-});
+})
 
-export const Prefix = styled('span', {
-  fontFamily: '$default',
-  fontSize: '$sm',
-  color: '$gray300',
-  fontWeight: 'regular'
-});
+export const InputContainer = styled('div', {
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '$2',
+})
 
 export const Input = styled('input', {
-  fontFamily: '$default',
-  fontSize: '$sm',
-  color: '$white',
-  fontWeight: 'regular',
-  background: 'transparent',
-  border: 0,
   width: '100%',
-  '&:focus': {
-    outline: 0
-  },
+  padding: '$2',
+  transition: '0.5s',
+  border: '2px solid transparent',
+  fontFamily: '$roboto',
+  boxSizing: 'border-box',
+  background: '$white',
   '&:disabled': {
-    cursor: 'not-allowed'
+    cursor: 'not-allowed',
   },
-  '&:placeholder': {
-    color: '$gray500'
-  }
-});
+  '&:focus': {
+    outline: 'none',
+  },
+  variants: {
+    theme: {
+      primary: {
+        borderColor: '$blue300',
+        color: '$blue500',
+        '&:focus': {
+          borderColor: '$blue500',
+        },
+        '::placeholder': {
+          color: '$blue500',
+        },
+      },
+      success: {
+        borderColor: '$green300',
+        color: '$green500',
+        '&:focus': {
+          borderColor: '$green500',
+        },
+        '::placeholder': {
+          color: '$green500',
+        },
+      },
+      warning: {
+        borderColor: '$yellow300',
+        color: '$yellow500',
+        '&:focus': {
+          borderColor: '$yellow500',
+        },
+        '::placeholder': {
+          color: '$yellow500',
+        },
+      },
+      danger: {
+        borderColor: '$red300',
+        color: '$red500',
+        '&:focus': {
+          borderColor: '$red500',
+        },
+        '::placeholder': {
+          color: '$red500',
+        },
+      },
+      info: {
+        borderColor: '$blueGray300',
+        color: '$blueGray500',
+        '&:focus': {
+          borderColor: '$blueGray500',
+        },
+        '::placeholder': {
+          color: '$blueGray500',
+        },
+      },
+    },
+    size: {
+      sm: {
+        padding: '$2',
+        fontSize: '$xs',
+        borderRadius: '$sm',
+        height: '$9',
+      },
+      md: {
+        padding: '$2$5',
+        fontSize: '$sm',
+        borderRadius: '$md',
+        height: '$12',
+      },
+    },
+  },
+  defaultVariants: {
+    theme: 'info',
+    size: 'sm',
+  },
+})

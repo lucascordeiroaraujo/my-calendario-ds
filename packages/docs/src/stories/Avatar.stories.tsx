@@ -1,27 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Avatar, AvatarProps } from '@my-calendario/react';
+import {
+  MyCalendarioAvatar,
+  MyCalendarioAvatarProps,
+} from '@my-calendario/react'
 
 export default {
   title: 'Data display/Avatar',
-  component: Avatar,
+  component: MyCalendarioAvatar,
   args: {
     src: 'https://github.com/lucascordeiroaraujo.png',
-    alt: 'Lucas Cordeiro Araujo'
+    alt: 'Lucas Cordeiro Araujo',
   },
   argTypes: {
     src: {
       control: {
-        type: 'text'
-      }
-    }
-  }
-} as Meta<AvatarProps>;
+        type: 'text',
+      },
+    },
+  },
+} as Meta<MyCalendarioAvatarProps>
 
-export const Primary: StoryObj<AvatarProps> = {};
+export const Primary: StoryObj<MyCalendarioAvatarProps> = {}
 
-export const WithFallback: StoryObj<AvatarProps> = {
+export const WithFallback: StoryObj<MyCalendarioAvatarProps> = {
   args: {
-    src: undefined
-  }
-};
+    src: undefined,
+  },
+}

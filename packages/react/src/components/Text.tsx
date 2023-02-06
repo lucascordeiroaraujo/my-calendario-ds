@@ -1,12 +1,12 @@
-import { ComponentProps, ElementType } from 'react';
+import { ComponentProps, ElementType } from 'react'
 
-import { styled } from '../styles';
+import { styled } from '../styles'
 
-export const Text = styled('p', {
+export const MyCalendarioText = styled('p', {
   fontFamily: '$default',
   lineHeight: '$base',
-  margin: 8,
-  color: '$gray100',
+  color: '$gray800',
+  margin: '$0',
   variants: {
     size: {
       xxs: { fontSize: '$xxs' },
@@ -21,16 +21,17 @@ export const Text = styled('p', {
       '6xl': { fontSize: '$6xl' },
       '7xl': { fontSize: '$7xl' },
       '8xl': { fontSize: '$8xl' },
-      '9xl': { fontSize: '$9xl' }
-    }
+      '9xl': { fontSize: '$9xl' },
+    },
   },
   defaultVariants: {
-    size: 'md'
-  }
-});
+    size: 'md',
+  },
+})
 
-export interface TextProps extends ComponentProps<typeof Text> {
-  as?: ElementType;
+export interface MyCalendarioTextProps
+  extends ComponentProps<typeof MyCalendarioText> {
+  as?: ElementType
 }
 
-Text.displayName = 'Text';
+MyCalendarioText.displayName = 'MyCalendarioText'

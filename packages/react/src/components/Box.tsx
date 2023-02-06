@@ -1,14 +1,15 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from 'react'
 
-import { styled } from '../styles';
+import { styled } from '../styles'
 
-export const Box = styled('div', {
+export const MyCalendarioBox = styled('div', {
   padding: '$6',
   borderRadius: '$md',
   backgroundColor: '$gray300',
-  border: '1px solid $gray900'
-});
+  border: '1px solid $gray900',
+})
 
-export interface BoxProps extends ComponentProps<typeof Box> {}
+export interface MyCalendarioBoxProps
+  extends ComponentProps<typeof MyCalendarioBox> {}
 
-Box.displayName = 'Box';
+MyCalendarioBox.displayName = 'MyCalendarioBox'

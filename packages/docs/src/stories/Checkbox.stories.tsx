@@ -1,26 +1,31 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Box, Text, Checkbox, CheckboxProps } from '@my-calendario/react';
+import {
+  MyCalendarioBox,
+  MyCalendarioText,
+  MyCalendarioCheckbox,
+  MyCalendarioCheckboxProps,
+} from '@my-calendario/react'
 
 export default {
   title: 'Form/Checkbox',
-  component: Checkbox,
+  component: MyCalendarioCheckbox,
   args: {},
   decorators: [
-    Story => {
+    (Story: any) => {
       return (
-        <Box
+        <MyCalendarioBox
           as="label"
           css={{ display: 'flex', alignItems: 'center', gap: '$3' }}
         >
           {Story()}
-          <Text size="sm" css={{ margin: 0 }}>
+          <MyCalendarioText size="sm" css={{ margin: 0 }}>
             Accept terms of use
-          </Text>
-        </Box>
-      );
-    }
-  ]
-} as Meta<CheckboxProps>;
+          </MyCalendarioText>
+        </MyCalendarioBox>
+      )
+    },
+  ],
+} as Meta<MyCalendarioCheckboxProps>
 
-export const Primary: StoryObj<CheckboxProps> = {};
+export const Primary: StoryObj<MyCalendarioCheckboxProps> = {}

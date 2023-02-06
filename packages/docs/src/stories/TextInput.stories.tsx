@@ -1,41 +1,65 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Box, Text, TextInput, TextInputProps } from '@my-calendario/react';
+import {
+  MyCalendarioInput,
+  MyCalendarioInputProps,
+  MyCalendarioText,
+} from '@my-calendario/react'
 
 export default {
   title: 'Form/Text Input',
-  component: TextInput,
-  args: {},
-  decorators: [
-    Story => {
-      return (
-        <Box
-          as="label"
-          css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
-        >
-          <Text size="sm">Email address</Text>
-          {Story()}
-        </Box>
-      );
-    }
-  ]
-} as Meta<TextInputProps>;
-
-export const Primary: StoryObj<TextInputProps> = {
+  component: MyCalendarioInput,
   args: {
-    placeholder: 'Type your name'
-  }
-};
+    label: 'myCalendário InputText label',
+    theme: 'info',
+    size: 'sm',
+  },
+  argTypes: {
+    theme: {
+      options: ['primary', 'success', 'warning', 'danger', 'info'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+  },
+} as Meta<MyCalendarioInputProps>
 
-export const Disabled: StoryObj<TextInputProps> = {
+export const Primary: StoryObj<MyCalendarioInputProps> = {
   args: {
-    disabled: true
-  }
-};
+    placeholder: 'Type your name',
+  },
+}
 
-export const WithPrefix: StoryObj<TextInputProps> = {
+export const Disabled: StoryObj<MyCalendarioInputProps> = {
   args: {
-    prefix: 'cal.com/',
-    placeholder: 'your-username'
-  }
-};
+    disabled: true,
+  },
+}
+
+export const WithPrefix: StoryObj<MyCalendarioInputProps> = {
+  args: {
+    prefix: (
+      <>
+        <MyCalendarioText size="sm">cal.com/</MyCalendarioText>
+      </>
+    ),
+    placeholder: 'your-username',
+  },
+}
+
+export const WithSufix: StoryObj<MyCalendarioInputProps> = {
+  args: {
+    sufix: (
+      <>
+        <MyCalendarioText size="sm">.cal.com</MyCalendarioText>
+      </>
+    ),
+    placeholder: 'your-username',
+  },
+}

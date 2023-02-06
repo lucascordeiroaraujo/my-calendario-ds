@@ -1,20 +1,41 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from 'react'
 
-import { Input, Prefix, TextInputContainer } from './styles';
+import {
+  Input,
+  TextInputContainer,
+  TextInputLabel,
+  InputContainer,
+} from './styles'
 
-export interface TextInputProps
-  extends Omit<ComponentProps<typeof Input>, 'size'> {
-  prefix?: string;
-  size?: ComponentProps<typeof TextInputContainer>['size'];
+export interface MyCalendarioInputProps extends ComponentProps<typeof Input> {
+  prefix: any
+  sufix: any
+  label: string
+  size?: ComponentProps<typeof Input>['size']
 }
 
-export function TextInput({ prefix, size, ...props }: TextInputProps) {
+export function MyCalendarioInput({
+  label,
+  prefix,
+  sufix,
+  size,
+  ...props
+}: MyCalendarioInputProps) {
   return (
-    <TextInputContainer size={size}>
-      {!!prefix && <Prefix>{prefix}</Prefix>}
-      <Input {...props} />
+    <TextInputContainer>
+      <TextInputLabel size={size} htmlFor="">
+        {label}
+      </TextInputLabel>
+
+      <InputContainer>
+        {prefix}
+
+        <Input size={size} />
+
+        {sufix}
+      </InputContainer>
     </TextInputContainer>
-  );
+  )
 }
 
-TextInput.displayName = 'TextInput';
+MyCalendarioInput.displayName = 'MyCalendarioInput'

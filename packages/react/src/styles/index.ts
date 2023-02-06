@@ -5,10 +5,10 @@ import {
   fontWeights,
   lineHeights,
   radii,
-  space
-} from '@my-calendario/tokens';
+  space,
+} from '@my-calendario/tokens'
 
-import { createStitches, defaultThemeMap } from '@stitches/react';
+import { createStitches, defaultThemeMap } from '@stitches/react'
 
 export const {
   styled,
@@ -18,14 +18,13 @@ export const {
   getCssText,
   theme,
   createTheme,
-  config
+  config,
 } = createStitches({
   themeMap: {
     ...defaultThemeMap,
     height: 'space',
-    width: 'space'
+    width: 'space',
   },
-
   theme: {
     colors,
     fontSizes,
@@ -33,6 +32,6 @@ export const {
     fonts,
     lineHeights,
     radii,
-    space
-  }
-});
+    space,
+  },
+})
